@@ -7,7 +7,6 @@ export default async (req, res) => {
         case 'GET':
             try {
                 const notes = await Note.find({})
-
                 res.status(200).json({
                     success: true,
                     data: notes

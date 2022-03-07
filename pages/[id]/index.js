@@ -16,7 +16,7 @@ const Note = ({ note }) => {
     const deleteNote = async ()=> {
         const noteId = router.query.id
         try {
-            const res = await fetch(`http://localhost:3000/api/notes/${noteId}`, {
+            const res = await fetch(`${process.env.NEXT_HOST}/api/notes/${noteId}`, {
                 method: 'Delete'
             })
             router.push('/')
@@ -53,7 +53,7 @@ const Note = ({ note }) => {
 }
 
 Note.getInitialProps = async ({query: {id} })=>{
-    const res = await fetch(`http://localhost:3000/api/notes/${id}`)
+    const res = await fetch(`${process.env.NEXT_HOST}/api/notes/${id}`)
     const {data} = await res.json()
 
     return {
