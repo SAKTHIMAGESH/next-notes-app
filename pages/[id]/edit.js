@@ -52,7 +52,7 @@ const UpdateNote = ({note})=> {
 
  const UpdateNote = async() => {
      try {
-         const res = await fetch(`http://localhost:3000/api/notes/${router.query.id}`, {
+         const res = await fetch(`${process.env.HOST}api/notes/${router.query.id}`, {
             method: 'PUT',
             headers: {
                 "Accept": "application/json",
@@ -105,7 +105,7 @@ const UpdateNote = ({note})=> {
 }
 
 UpdateNote.getInitialProps = async ({ query: {id}})=> {
-    const res = await fetch(`http://localhost:3000/api/notes/${id}`)
+    const res = await fetch(`${process.env.HOST}api/notes/${id}`)
     const { data } = await res.json()
 
     return {
