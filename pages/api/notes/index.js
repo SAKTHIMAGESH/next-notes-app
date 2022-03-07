@@ -3,6 +3,7 @@ import Note from '../../../models/Note';
 dbConnect();
 export default async (req, res) => {
     const { method } = req
+    res.setHeader('Access-Control-Allow-Origin', 'https://next-notes-app-hv49fylc1-sakthimagesh.vercel.app')
     switch(method) {
         case 'GET':
             try {
