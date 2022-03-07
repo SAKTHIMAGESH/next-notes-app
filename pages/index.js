@@ -38,7 +38,7 @@ const Home=({ notes })=>{
 }
 
 Home.getInitialProps = async()=>{
-  const res = await fetch(`${process.env.HOST}api/notes`)
+  const res = await fetch(`${process.env.NEXT_HOST}/api/notes`)
   const { data } = await res.json();
   return {
     notes: data
